@@ -1,4 +1,4 @@
-# 🎁 Alerts JS
+# 🅰 Alerts JS
 
 <p align="center">
   <img src="logo.png">
