@@ -1,4 +1,7 @@
 # 🎁 Alerts JS
+
+![AlertsJS Logo](logo.png)
+
 AlertsJS is a **simple, easy** way of displaying beautiful **alerts and popups** updated weekly in our curated list including designs of various **frameworks** and **libraries**. 😎
 
 You can integrate it in your website with using just a single `<script>` tag, Additional options are available, but not required since you can use our free webservice to display alerts/popups without configuring Javascript.
