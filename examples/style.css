@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
+
+.AlertsJS__overlay {
+  content: '\A';
+  position: fixed;
+  width: 100vw;
+  height:100vh;
+  top:0;
+  left:0;
+  background: rgba(0,0,0,0.5);
+  opacity: 1;
+  z-index: -1;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.AlertsJS__alert {
+  background-color: white;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.16);
+  max-height: 50vh;
+  width: 30vw;
+  position: absolute;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 1rem;
+  font-family: 'Montserrat';
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.AlertsJS__alert {
+  font-size: 1rem;
+}
+
+.AlertsJS__alert img {
+  max-height: 10vh;
+}
