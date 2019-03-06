@@ -1,7 +1,7 @@
 # 🅰 Alerts JS
 
 <p align="center">
-  <img src="logo.png">
+  <img src="./assets/logo-large-red.png" alt="AlertsJS Logo">
 </p>
 
 AlertsJS is a **simple, easy** way of displaying beautiful **alerts and popups** updated weekly in our curated list including designs of various **frameworks** and **libraries**. 😎
