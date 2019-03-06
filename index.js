@@ -2,10 +2,23 @@ const alert = (object) => {
   if (!object) {
     return console.error('You have to provide content');
   }
+  const overlayElem = document.createElement('div');
+  overlayElem.classList.add('alertsjs-overlay');
   const alertElem = document.createElement('div');
+  alertElem.classList.add('alertsjs-alert');
   const close = () => {
-    alertElem.parentNode.removeChild(alertElem);
+    alertElem.parentNode.removeChild(overlayElem);
   };
+  if (object.icon) {
+    const iconElem = document.createElement('img');
+    switch (object.icon) {
+      case 'success':
+        iconElem.src = 'icons/success.png';
+        break;
+    }
+    // iconElem.classList.add('icon');
+    alertElem.appendChild(iconElem);
+  }
   if (object.title) {
     const titleElem = document.createElement('h1');
     titleElem.textContent = object.title;
@@ -32,6 +45,7 @@ const alert = (object) => {
         }
         break;
       default:
+        console.error('Unknown action');
         break;
     }
   } else {
@@ -40,22 +54,13 @@ const alert = (object) => {
     buttonElem.addEventListener('click', close);
     alertElem.appendChild(buttonElem);
   }
-  if (object.icon) {
-    const iconElem = document.createElement('img');
-    switch (object.icon) {
-      case 'success':
-        iconElem.src = 'icons/success.png';
-        break;
-    }
-    // iconElem.classList.add('icon');
-    alertElem.appendChild(iconElem);
-  }
-  document.body.appendChild(alertElem);
+  document.body.appendChild(overlayElem);
+  overlayElem.appendChild(alertElem);
 };
 
 alert({
-  title: 'Hello!',
-  message: 'Approved',
+  title: 'Approved',
+  message: 'Your information was successfully approved',
   icon: 'success',
   // action: 'link',
   // redirect: '/test',
