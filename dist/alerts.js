@@ -26,7 +26,6 @@ class Alert {
         if (document.getElementsByClassName('AlertsJS__overlay')[0]) {
             const overlayElem = document.getElementsByClassName('AlertsJS__overlay')[0];
             overlayElem.parentNode.removeChild(overlayElem);
-            console.log('removeChild');
         }
         // Creating the overlay element
         const overlayElem = document.createElement('div');
@@ -36,7 +35,12 @@ class Alert {
         alertElem.classList.add('AlertsJS__alert');
         // Close Modal Function
         const close = () => {
-            overlayElem.parentNode.removeChild(overlayElem);
+            overlayElem.classList.add('AlertsJS__fadeOut');
+            setTimeout(() => {
+                if (overlayElem.parentNode) {
+                    overlayElem.parentNode.removeChild(overlayElem);
+                }
+            }, 700);
         };
         // Listens for ESC to close the modal
         window.addEventListener("keydown", (e) => {

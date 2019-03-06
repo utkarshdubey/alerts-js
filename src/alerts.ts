@@ -58,7 +58,6 @@ class Alert implements AlertOptions {
         if(document.getElementsByClassName('AlertsJS__overlay')[0]){
           const overlayElem = document.getElementsByClassName('AlertsJS__overlay')[0];
           overlayElem.parentNode.removeChild(overlayElem);
-          console.log('removeChild')
         }
 
         // Creating the overlay element
@@ -71,7 +70,12 @@ class Alert implements AlertOptions {
 
         // Close Modal Function
         const close: any = () => {
-            overlayElem.parentNode.removeChild(overlayElem);
+          overlayElem.classList.add('AlertsJS__fadeOut');
+          setTimeout(() => {
+            if(overlayElem.parentNode){
+              overlayElem.parentNode.removeChild(overlayElem);
+            }
+          }, 700);
         }
 
         // Listens for ESC to close the modal

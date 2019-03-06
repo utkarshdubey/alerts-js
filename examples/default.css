@@ -1,18 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
 
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1}
+  100% {opacity: 0}
+}
+
+.AlertsJS__fadeOut {
+  opacity: 0;
+}
+
 .AlertsJS__overlay {
   content: '\A';
   position: fixed;
   width: 100vw;
   height:100vh;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   background: rgba(0,0,0,0.5);
-  opacity: 1;
   z-index: -1;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
+  animation: fadeIn .7s 1;
+  transition: all .7s linear;
 }
 
 .AlertsJS__alert {
