@@ -17,6 +17,9 @@ Because it provides a simple, unobtrusive web interface to display beautiful ale
 - Integrating things such as 🔗 download links on payment through PayPal or Stripe. It also offers various integrations. Look at [integrations](#integrations) for more information.
 - It will remain open-source forever, but to keep it running and maintaining it you can help us by donating us on 💷💷[PayPal](https://www.paypal.me/udicon).
 
+## 🧑 Contributing
+We'd love if you help us by fixing a bug, or creating a whole new modal theme from scratch. Every small contribution counts towards a big release. You can join our official **Discord** Server 😳 [here](https://discord.gg/YvgEPre). Feel free to create a pull request if you think we did something 👎 wrong.
+
 ## 👥 Use Cases
 AlertsJS can be used by anyone and everyone as its flexible and adjusts according to the situation. If you aren't interested in writing Javascript code, you can use our Web Interface with which you could configure all the settings which you could do while writing JS. But if you want to have even more control and write JS. Don't worry we have the open-source library with which you could build your own alerts/popups and customize it according to your needs.
 ## 🚛 The Open-Source Process
