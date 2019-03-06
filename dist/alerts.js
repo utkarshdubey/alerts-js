@@ -5,6 +5,23 @@ class Alert {
     }
     // Alert Function
     alert() {
+        if (this.object.theme) {
+            console.log(`Entered the theme ${this.object.theme.name}`);
+        }
+        if (this.object.theme.name == 'default' || !this.object.theme.name) {
+            // Loading the CSS file for theme
+            const bodyHeadElem = document.getElementsByTagName('head')[0];
+            const bodyHeadElemLink = document.createElement('link');
+            bodyHeadElemLink.rel = 'stylesheet';
+            bodyHeadElemLink.type = 'text/css';
+            // bodyHeadElemLink.onload = () => {
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('Window Onload function');
+            }, false);
+            bodyHeadElemLink.href = this.object.theme.src || 'https://utkarsh.co/css/default.css';
+            // }
+            bodyHeadElem.appendChild(bodyHeadElemLink);
+        }
         // Creating the overlay element
         const overlayElem = document.createElement('div');
         overlayElem.classList.add('AlertsJS__overlay');
@@ -15,6 +32,12 @@ class Alert {
         const close = () => {
             overlayElem.parentNode.removeChild(overlayElem);
         };
+        // Listens for ESC to close the modal
+        window.addEventListener("keydown", (e) => {
+            if (e.keyCode == 27) {
+                close();
+            }
+        }, false);
         // Checks whether an icon parameter is passed
         if (this.object.icon) {
             // Creating an icon element
@@ -22,6 +45,7 @@ class Alert {
             switch (this.object.icon) {
                 case 'success':
                     iconElem.src = 'icons/success.png';
+                    iconElem.draggable = false;
                     break;
             }
             // iconElem.classList.add('icon');
@@ -48,12 +72,12 @@ class Alert {
         }
         // Checks whether an action is provided
         if (this.object.action) {
-            switch (this.object.action) {
+            switch (this.object.action.type) {
                 case 'link':
-                    if (this.object.redirect) {
+                    if (this.object.action.redirect) {
                         const buttonElem = document.createElement('a');
-                        buttonElem.href = this.object.redirect;
-                        buttonElem.textContent = this.object.buttonText || 'Submit';
+                        buttonElem.href = this.object.action.redirect;
+                        buttonElem.textContent = this.object.action.text || 'Ok!';
                         buttonElem.addEventListener('click', close);
                         alertElem.appendChild(buttonElem);
                     }
@@ -64,10 +88,24 @@ class Alert {
             }
         }
         else {
-            const buttonElem = document.createElement('button');
-            buttonElem.textContent = this.object.buttonText || 'Submit';
-            buttonElem.addEventListener('click', close);
-            alertElem.appendChild(buttonElem);
+            const closeButtonElem = document.createElement('button');
+            closeButtonElem.textContent = this.object.closeButtonText || 'Submit';
+            closeButtonElem.addEventListener('click', close);
+            alertElem.appendChild(closeButtonElem);
+        }
+        if (this.object.button) {
+            if (this.object.button.action && this.object.button.action.type == 'link' && this.object.button.action.redirect) {
+                const buttonElemLink = document.createElement('a');
+                buttonElemLink.href = this.object.button.action.redirect;
+                buttonElemLink.textContent = this.object.button.text;
+                alertElem.appendChild(buttonElemLink);
+            }
+            else {
+                const buttonElem = document.createElement('button');
+                buttonElem.textContent = this.object.button.text;
+                buttonElem.type = this.object.button.type || null;
+                alertElem.appendChild(buttonElem);
+            }
         }
         //   Appending to body element  
         document.body.appendChild(overlayElem);
