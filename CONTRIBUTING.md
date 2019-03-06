@@ -11,6 +11,18 @@ recommend you to change the variable name instead. Try to use ES6 syntax or
 newer. Development :computer: is separated in 3 steps: 1. Make it work, 2.Make it clean,
 3.Make it fast
 
+### Design
+<p align="center">
+  <img src="./assets/design-structure.png" alt="AlertsJS Logo">
+</p>
+If you want to contribute by creating a design for AlertJS, you've to view the basic structure of our alerts first.
+Like in the image above the alert consists of a background which contains the main information of the alert.
+On the top of the alert is an optional icon to create a clear expression of the card.
+Beneath is a big title with the core message of the alert and followed by a description or note.
+On the bottom there's usually one or two buttons which contain the actions you want the user to take.
+Feel free to play around with colors, fonts etc. and create awesome designs.
+Please send us your design as an image file or as .psd .xd and so on.
+We're looking forward to see awesome designs from you :smile:!
 ### Commits
 - Consider starting the commit message with an applicable emoji:
   - 🎨 ``:art:`` when improving the format/structure of the code
