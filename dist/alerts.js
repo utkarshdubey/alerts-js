@@ -22,6 +22,12 @@ class Alert {
             // }
             bodyHeadElem.appendChild(bodyHeadElemLink);
         }
+        // Remove previous alert if it exists
+        if (document.getElementsByClassName('AlertsJS__overlay')[0]) {
+            const overlayElem = document.getElementsByClassName('AlertsJS__overlay')[0];
+            overlayElem.parentNode.removeChild(overlayElem);
+            console.log('removeChild');
+        }
         // Creating the overlay element
         const overlayElem = document.createElement('div');
         overlayElem.classList.add('AlertsJS__overlay');
@@ -107,7 +113,7 @@ class Alert {
                 alertElem.appendChild(buttonElem);
             }
         }
-        //   Appending to body element  
+        //   Appending to body element
         document.body.appendChild(overlayElem);
         overlayElem.appendChild(alertElem);
     }

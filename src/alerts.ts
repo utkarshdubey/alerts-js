@@ -37,7 +37,7 @@ class Alert implements AlertOptions {
 
         if(this.object.theme){
             console.log(`Entered the theme ${this.object.theme.name}`);
-        } 
+        }
         if(this.object.theme.name == 'default' || !this.object.theme.name){
             // Loading the CSS file for theme
             const bodyHeadElem  = document.getElementsByTagName('head')[0];
@@ -51,7 +51,14 @@ class Alert implements AlertOptions {
             bodyHeadElemLink.href = this.object.theme.src || 'https://utkarsh.co/css/default.css';
             // }
             bodyHeadElem.appendChild(bodyHeadElemLink);
-      
+
+        }
+
+        // Remove previous alert if it exists
+        if(document.getElementsByClassName('AlertsJS__overlay')[0]){
+          const overlayElem = document.getElementsByClassName('AlertsJS__overlay')[0];
+          overlayElem.parentNode.removeChild(overlayElem);
+          console.log('removeChild')
         }
 
         // Creating the overlay element
@@ -72,7 +79,7 @@ class Alert implements AlertOptions {
             if(e.keyCode == 27){
                 close();
             }
-        }, false);        
+        }, false);
 
         // Checks whether an icon parameter is passed
         if (this.object.icon) {
@@ -130,9 +137,9 @@ class Alert implements AlertOptions {
                 closeButtonElem.addEventListener('click', close);
                 alertElem.appendChild(closeButtonElem);
           }
-        
+
           if(this.object.button){
-              
+
               if(this.object.button.action && this.object.button.action.type == 'link' && this.object.button.action.redirect){
                 const buttonElemLink = document.createElement('a');
                 buttonElemLink.href = this.object.button.action.redirect;
@@ -144,9 +151,9 @@ class Alert implements AlertOptions {
                 buttonElem.type = this.object.button.type || null;
                 alertElem.appendChild(buttonElem);
               }
-              
+
           }
-        //   Appending to body element  
+        //   Appending to body element
           document.body.appendChild(overlayElem);
           overlayElem.appendChild(alertElem);
     }
