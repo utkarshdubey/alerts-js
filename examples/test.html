@@ -10,16 +10,17 @@
 </head>
 
 <body>
+    <input type="button" onclick="firstAlert.alert()" value="Click me" />
     <script src="../dist/alerts.js"></script>
     <script>
         let firstAlert = new Alert({
             title: 'Approved',
             message: 'Finally',
             icon: 'success',
+            action: 'link',
+            redirect: 'https://google.com',
             buttonText: 'Close',
         });
-
-        firstAlert.alert()
     </script>
 </body>
 
