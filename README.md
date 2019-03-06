@@ -25,6 +25,52 @@ Since the development is open-source, we want to add as many contributors as pos
 - 2️⃣ The then approved libraries would be added to the Global Package Index (GPI) with which it is accessible through the AlertsJS library.
 - 3️⃣ The curated list thus is updated weekly in the same manner. Note that only opensource libraries are added to the **GPI**.
 
+## 📄 Documentation
+You can use the following options 👂 in the constructor:
+```js
+const alert = new Alert({
+  title: 'Awesome Alert', // The 📌 title of modal.
+  message: 'This is another awesome alert made using AlertsJS', // 🌭 Content to display.
+  icon: 'success', // A success ✅ or an ❎ error, custom icons are upcoming
+  action: 'link', // ⚡ The link you want to redirect to... more actions are coming
+  redirect: '/purchase/success', // 🌐 Link where you want to redirect
+  buttonText: '', // 🔲 The close button text.
+});
+
+...
+```
+You can call the alert with a 🛴 simple function:
+
+```js
+...
+alert.alert();
+
+```
+Or through an 👆 onclick event:
+
+```html
+<input type="button" onclick="alert.alert()" value="Click me" />
+```
+
+### Properties
+
+  
+|Property Name| Property Description  |
+|--|--|
+| title | The title of the modal. It is a required field. |
+| message | The message of the modal. It is a required field. It can render HTML too. |
+| icon | An icon to display when the message pops-up. Currently the options available are `success` and `error`, Custom icons are coming soon.|
+| action | Currently the only option available is `link` which creates a link instead of the button. |
+| redirect | The URL where the link has to redirect. |
+| buttonText | The text of the `button` or `link` |
+
+##  ✏ To-Do
+- [x] Make it work
+- [ ] Add CSS effects, such as fadeIn, etc. to the modal
+- [ ] Add more properties.
+  
+
+
 ## ❓ FAQ
 
 ### Is it free? Are there any hidden costs? 🆓
