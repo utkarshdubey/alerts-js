@@ -28,3 +28,5 @@ newer. Development :computer: is separated in 3 steps: 1. Make it work, 2.Make i
   - ⬆️ ``:arrow_up:`` when upgrading dependencies
   - ⬇️ ``:arrow_down:`` when downgrading dependencies
   - 👕 ``:shirt:`` when removing linter warnings
+  - :new: ``:new:`` when adding new functionality
+  - :star2: ``:star2:`` when styling the content
