@@ -4,12 +4,16 @@
   <img src="./assets/logo-large-red.png" alt="AlertsJS Logo">
 </p>
 
-AlertsJS is a **simple, easy** way of displaying beautiful **alerts and popups** updated weekly in our curated list including designs of various **frameworks** and **libraries**. 😎
+AlertsJS is a **simple, easy** way of displaying beautiful **alerts and popups** updated weekly in our curated list
+including designs of various **frameworks** and **libraries**. 😎
 
-You can integrate it in your website with using just a single `<script>` tag, Additional options are available, but not required since you can use our free webservice to display alerts/popups without configuring Javascript.
+You can integrate it in your website with using just a single `<script>
+  ` tag, Additional options are available, but not required since you can use our free webservice to display alerts/popups without configuring Javascript.
 
 ## 💡 Why AlertsJS?
-Because it provides a simple, unobtrusive web interface to display beautiful alerts and popups with just one ``<script>`` tag, without having any prior knowledge of javascript. You can also - 
+Because it provides a simple, unobtrusive web interface to display beautiful alerts and popups with just one `
+  `<script>`
+  ` tag, without having any prior knowledge of javascript. You can also - 
 - Create forms and collect data by integrating various plugins and or services such as MailChimp 📬 or our own service.
 - You can choose any of your favorite libraries such as micromodal.js or Sweetalerts.js right through the configurations and have a variety of over 200+ such libraries and plugins including our **custom made** one's.
 - We are tiny, which means no need to load Jquery and all the inessential things. You'll only include what you need.
@@ -31,28 +35,44 @@ Since the development is open-source, we want to add as many contributors as pos
 ## 📄 Documentation
 You can use the following options 👂 in the constructor:
 ```js
-const alert = new Alert({
-  title: 'Awesome Alert', // The 📌 title of modal.
-  message: 'This is another awesome alert made using AlertsJS', // 🌭 Content to display.
-  icon: 'success', // A success ✅ or an ❎ error, custom icons are upcoming
-  action: 'link', // ⚡ The link you want to redirect to... more actions are coming
-  redirect: '/purchase/success', // 🌐 Link where you want to redirect
-  buttonText: '', // 🔲 The close button text.
-});
+  const alert = new Alert({
+    title: 'Awesome Alert', // The 📌 title of modal.
+    message: 'This is another awesome alert made using AlertsJS', // 🌭 Content to display.
+    icon: 'success', // A success ✅ or an ❎ error, custom icons are upcoming
+    action: {
+      type: 'link', // ⚡ The link you want to redirect to... more actions are coming
+      redirect: '/purchase/success', // 🌐 Link where you want to redirect
+    },
+    button: { // 🔳 Button configurations
+      type: 'submit', // 🌀 Type of the button [submit, reset]
+      text: 'Get me flyin!', // 💊 Button text
+      action: { // ⚡ Actions on the button
+        type: 'link', // 👍 The link you want to redirect to... more actions are coming
+        redirect: 'https://google.com' // 🌐 Link where you want to redirect
+      }
+    },
+    closeButtonText: 'Close this thingy', // 🔲 The close button text.
+  });
 
-...
-```
+  ...
+  ``
+  `
 You can call the alert with a 🛴 simple function:
 
 ```js
-...
-alert.alert();
+    ...
+    alert.alert();
 
 ```
 Or through an 👆 onclick event:
 
-```html
-<input type="button" onclick="alert.alert()" value="Click me" />
+```
+  html
+    <
+    input type = "button"
+  onclick = "alert.alert()"
+  value = "Click me" / >
+  
 ```
 
 ### Properties
@@ -62,10 +82,17 @@ Or through an 👆 onclick event:
 |--|--|
 | title | The title of the modal. It is a required field. |
 | message | The message of the modal. It is a required field. It can render HTML too. |
-| icon | An icon to display when the message pops-up. Currently the options available are `success` and `error`, Custom icons are coming soon.|
-| action | Currently the only option available is `link` which creates a link instead of the button. |
+| icon | An icon to display when the message pops-up. Currently the options available are `
+  success ` and `
+  error `, Custom icons are coming soon.|
+| action | Currently the only option available is `
+  link
+    ` which creates a link instead of the button. |
 | redirect | The URL where the link has to redirect. |
-| buttonText | The text of the `button` or `link` |
+| buttonText | The text of the `
+  button ` or `
+  link
+    ` |
 
 ##  ✏ To-Do
 - [x] Make it work
