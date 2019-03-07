@@ -90,7 +90,11 @@ Or through an 👆 onclick event:
 | title | The title of the modal. It is a required field. |
 | message | The message of the modal. It is a required field. It can render HTML too. |
 | icon | An icon to display when the message pops-up. Currently the options available are `success` and `error`, Custom icons are coming soon.|
-| action | Currently the only option available is `link` which creates a link instead of the button. |
+| action | It has two properties, `type` and `redirect`. Currently the type is only `link`. |
+| timeout | Timeout to close the modal after **N** number of **seconds** |
+| button | It has three properties, `type`, `text`(required) and `action`. Type could be `submit`, `reset`, etc. `action` is same as in above |
+| customHTML | It has one property named `content` which would take in all the html you want in the modal. |
+| closeButtonText | The text to display on the close button |
 
 
 ##  ✏ To-Do
