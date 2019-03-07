@@ -52,6 +52,14 @@ You can use the following options 👂 in the constructor:
         redirect: 'https://google.com' // 🌐 Link where you want to redirect
       }
     },
+    customHTML: { // 🛃 Custom HTML Arrives
+      content: `
+          <form action="/" method="POST">
+              <input type="text" placeholder="Your name" style="color:red;" />
+              <input type="submit" value="Subscribe me!" />
+          </form>
+          ` // 🎬 Wrap everything inside the `` backticks.         
+    },
     closeButtonText: 'Close this thingy', // 🔲 The close button text.
   });
 
@@ -85,8 +93,7 @@ Or through an 👆 onclick event:
 | message | The message of the modal. It is a required field. It can render HTML too. |
 | icon | An icon to display when the message pops-up. Currently the options available are `success` and `error`, Custom icons are coming soon.|
 | action | Currently the only option available is `link` which creates a link instead of the button. |
-| redirect | The URL where the link has to redirect. |
-| buttonText | The text of the `button` or `link` |
+
 
 ##  ✏ To-Do
 - [x] Make it work
@@ -95,6 +102,9 @@ Or through an 👆 onclick event:
   - [ ] Create a nice, good looking button with good animations.
   - [ ] Better and nice looking modal design.
 - [x] Add more properties.
+- Custom HTML
+  - [x] Through Javascript
+  - [ ] Through HTML
 - [ ] MailChimp and work on other integrations.
 - [x] Work on designer and developer documentation for creating custom themes.  
 
@@ -119,14 +129,13 @@ If you are a designer looking to develop the design into code. You can do very e
 | `AlertsJS__fadeOut` | Add this class with the opacity you want and tinker with it. |
 | `AlertsJS__overlay` | The overlay behind the modal when modal appears. You can play with it and add background effects or colors. |
 | `.AlertsJS__alert` | The main alert box which appears when the button is clicked. You can play with colors, buttons, inputs and everything inside it. |
+| `.AlertsJS__customHTML` | Style for custom HTML which includes input boxes, buttons, iframes or anything else |
 
 ## 🌎 Global Index
 Global Index, is the global CDN powered by ☁ Cloudflare where all the themes made by developer/designers would be published. It will be hosted on the website(coming really soon). Utilizing Cloudflare's pre cache system. Loading CSS would be ultra-fast. API's coming soon. For development of theme look at [Development](#-development).
 
 ## 👩‍💻 Development
 You can add custom Javascript effects in background or on any other elements. The only thing is you aren't 🚫 allowed to use JQuery. A possible workaround for JQuery is to use only the code required from JQuery by copying it, instead of requiring the whole file.
-
-**You can't create custom elements inside of the Alert modal, currently.** The reason is due to instability issues and things. However we will allow custom HTML, really really soon 😊.
 
 **We don't hold any responsibility or any claims over copyright issues of certain libraries.** Even though strict checking would be done before publishing themes.
 
