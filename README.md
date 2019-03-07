@@ -40,6 +40,7 @@ You can use the following options 👂 in the constructor:
     title: 'Awesome Alert', // The 📌 title of modal.
     message: 'This is another awesome alert made using AlertsJS', // 🌭 Content to display.
     icon: 'success', // A success ✅ or an ❎ error, custom icons are upcoming
+    timeout: 5, // ⌚ Set a timeout after the modal has been opened. Time in seconds.
     action: {
       type: 'link', // ⚡ The link you want to redirect to... more actions are coming
       redirect: '/purchase/success', // 🌐 Link where you want to redirect
