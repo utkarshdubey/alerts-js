@@ -27,6 +27,25 @@ Because it provides a simple, unobtrusive web interface to display beautiful ale
 - Integrating things such as 🔗 download links on payment through PayPal or Stripe. It also offers various integrations. Look at [integrations](#integrations) for more information.
 - It will remain open-source forever, but to keep it running and maintaining it you can help us by donating us on 💷💷[PayPal](https://www.paypal.me/udicon).
 
+## 👨‍🏫 Installation
+To install and use the library, you can simple download the minified JS file from ```dist/alerts.js``` and include it in your html files.
+
+To initialize the alert. You can do so simply by:
+```js
+const brandNewAlert = new Alert({
+  // Your options here 😉
+})
+```
+
+Then using is as simple as:
+```js
+brandNewAlert.alert();
+```
+
+For more information on all the available properties and options. Please check ![Documentation](#-documentation).
+
+***Want to check what's new?***. Check the ![**CHANGELOG**](./CHANGELOG.md).
+
 ## 🧑 Contributing
 We'd love if you help us by fixing a bug, or creating a whole new modal theme from scratch. Every small contribution counts towards a big release. You can join our official **Discord** Server 😳 [here](https://discord.gg/YvgEPre). Feel free to create a pull request if you think we did something 👎 wrong.
 
@@ -104,16 +123,19 @@ Or through an 👆 onclick event:
 
 ##  ✏ To-Do
 - [x] Make it work
-- [ ] Example Modal
+- [x] Example Modal
   - [x] Add CSS effects, such as fadeIn, etc. to the modal
-  - [ ] Create a nice, good looking button with good animations.
-  - [ ] Better and nice looking modal design.
+  - [x] Create a nice, good looking button with good animations.
+  - [x] Better and nice looking modal design.
 - [x] Add more properties.
 - Custom HTML
   - [x] Through Javascript
   - [ ] Through HTML
 - [ ] MailChimp and work on other integrations.
-- [x] Work on designer and developer documentation for creating custom themes.  
+- [x] Work on designer and developer documentation for creating custom themes. 
+- [ ] Create the API and Global Index. Create the "**Pick from Global Index**" feature. 
+- [ ] Create separate theme pages, like npm packages.
+- [ ] A nice landing page. 
 
 
 ## 💻 Developer Documentation
