@@ -82,17 +82,10 @@ Or through an 👆 onclick event:
 |--|--|
 | title | The title of the modal. It is a required field. |
 | message | The message of the modal. It is a required field. It can render HTML too. |
-| icon | An icon to display when the message pops-up. Currently the options available are `
-  success ` and `
-  error `, Custom icons are coming soon.|
-| action | Currently the only option available is `
-  link
-    ` which creates a link instead of the button. |
+| icon | An icon to display when the message pops-up. Currently the options available are `success` and `error`, Custom icons are coming soon.|
+| action | Currently the only option available is `link` which creates a link instead of the button. |
 | redirect | The URL where the link has to redirect. |
-| buttonText | The text of the `
-  button ` or `
-  link
-    ` |
+| buttonText | The text of the `button` or `link` |
 
 ##  ✏ To-Do
 - [x] Make it work
