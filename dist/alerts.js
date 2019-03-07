@@ -134,4 +134,11 @@ class Alert {
         overlayElem.appendChild(alertElem);
     }
 }
+const travisCITest = () => {
+    return true;
+};
+module.exports = {
+    Alert: Alert,
+    travisCITest: travisCITest
+};
 //# sourceMappingURL=alerts.js.map

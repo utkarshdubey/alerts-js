@@ -1,0 +1,32 @@
+{
+  "name": "alertsjs",
+  "version": "0.1.0",
+  "description": "AlertsJS, is a simple and easy library to display beautiful modals.",
+  "main": ".eslintrc.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utkarshdubey/alerts-js.git"
+  },
+  "keywords": [
+    "AlertsJS",
+    "alerts",
+    "js",
+    "alerts",
+    "alerts-js"
+  ],
+  "author": "AlertsJS Contributors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/utkarshdubey/alerts-js/issues"
+  },
+  "homepage": "https://github.com/utkarshdubey/alerts-js#readme",
+  "devDependencies": {
+    "jest": "^24.3.0"
+  }
+}

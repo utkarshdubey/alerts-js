@@ -181,3 +181,12 @@ class Alert implements AlertOptions {
           overlayElem.appendChild(alertElem);
     }
 }
+
+const travisCITest: any = () => {
+    return true;
+}
+
+module.exports = {
+    Alert: Alert,
+    travisCITest: travisCITest
+};
