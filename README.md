@@ -144,6 +144,7 @@ theme:{
   name: 'yourThemeName', // 📛 The name of your theme, published.
   src: './css/yourThemeName.css' // 🥅 Source of the CSS file, if you want to store the theme files on your own server.
 }
+```
 
 ## ❓ FAQ
 
@@ -151,7 +152,7 @@ theme:{
 It's absolutely **free** and infact the developer code is **open-source**. Do what you want to, hack, break, distribute, we aren't sueing you.
 
 ### How will you make money? 💰💰💰
-We won't. But we require money for hosting the Web Interface, so we depend on donations and sponsorers. If you want to donate us, you could do it on [PayPal](https://www.paypal.me/udicon), for sponsoring please contact us
+We won't. But we require money for hosting the Web Interface, so we depend on donations and sponsorers. If you want to donate us, you could do it on [PayPal](https://www.paypal.me/udicon) or Join our Discord Server for perks, for sponsoring please contact us
 [here](https://utkarsh.co).
 
 ### I want a library added, could you do it? 😁
