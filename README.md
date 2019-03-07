@@ -33,6 +33,7 @@ Since the development is open-source, we want to add as many contributors as pos
 - 3️⃣ The curated list thus is updated weekly in the same manner. Note that only opensource libraries are added to the **GPI**.
 
 ## 📄 Documentation
+
 You can use the following options 👂 in the constructor:
 ```js
   const alert = new Alert({
@@ -95,8 +96,54 @@ Or through an 👆 onclick event:
   - [ ] Better and nice looking modal design.
 - [x] Add more properties.
 - [ ] MailChimp and work on other integrations.
-- [ ] Work on designer and developer documentation for creating custom themes.  
+- [x] Work on designer and developer documentation for creating custom themes.  
 
+
+## 💻 Developer Documentation
+If you want you can even create your own themes and publish them to the **Global Index** for others to use or simply use in your own project.
+
+### 🏓 Structure
+
+The current design structure of the modal is below. You can always add effects and other extra animations like progress bars. Or even use a Bootstrap + Swatch theme to create a simple alert. Whatever you make, please refrain the use of other **JS** frameworks such as **Jquery***. We are ~~lamely~~ really strict on what's taking resources.
+
+<p align="center">
+  <img src="./assets/design-structure.png" alt="AlertsJS Logo">
+</p>
+
+If you are a designer looking to develop the design into code. You can do very easily by using classes as mentioned below. We sincerely follow the [BEM Convention](http://getbem.com/naming/).
+
+| Class Name | Class Description |
+|--|--|
+| `@keyframes fadeIn` | The fadeIn effect keyframe. You can set up the opacity and other things using it while the popup fades in. |
+| `@keyframes fadeOut` | The fadeOut effect keyframe. You can set up the opacity and other things using it while the popup fades out. |
+| `AlertsJS__fadeOut` | Add this class with the opacity you want and tinker with it. |
+| `AlertsJS__overlay` | The overlay behind the modal when modal appears. You can play with it and add background effects or colors. |
+| `.AlertsJS__alert` | The main alert box which appears when the button is clicked. You can play with colors, buttons, inputs and everything inside it. |
+
+## 🌎 Global Index
+Global Index, is the global CDN powered by ☁ Cloudflare where all the themes made by developer/designers would be published. It will be hosted on the website(coming really soon). Utilizing Cloudflare's pre cache system. Loading CSS would be ultra-fast. API's coming soon. For development of theme look at [Development](#-development).
+
+## 👩‍💻 Development
+You can add custom Javascript effects in background or on any other elements. The only thing is you aren't 🚫 allowed to use JQuery. A possible workaround for JQuery is to use only the code required from JQuery by copying it, instead of requiring the whole file.
+
+**You can't create custom elements inside of the Alert modal, currently.** The reason is due to instability issues and things. However we will allow custom HTML, really really soon 😊.
+
+**We don't hold any responsibility or any claims over copyright issues of certain libraries.** Even though strict checking would be done before publishing themes.
+
+## 🎉 Publish Theme
+To publish the theme, you can contact one of the main contributors and send them a ZIP file containing the CSS/JS code you made. The theme would only be added to the [Global Index](#-global-index) after it qualifies certain criteria, which is:
+
+- No copyrighted material.
+- Clean and minified CSS files.
+- Use of proper comments in JS files.
+- Better loading optimizations done pre-hand.
+
+After you have qualified these criterias. ✅ Your theme would be approved and is now published to the Global Index. Now for anyone to use it, they can either download the files or add a name in the themes option like this:
+```js
+theme:{
+  name: 'yourThemeName', // 📛 The name of your theme, published.
+  src: './css/yourThemeName.css' // 🥅 Source of the CSS file, if you want to store the theme files on your own server.
+}
 
 ## ❓ FAQ
 
