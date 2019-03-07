@@ -6,7 +6,7 @@
         "target": "es6",
         "noImplicitAny": true,
         "preserveConstEnums": true,
-        "outDir": "dist",
+        "outDir": "src/dist",
         "sourceMap": true
     },
     "include": [
