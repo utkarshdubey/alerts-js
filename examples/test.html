@@ -9,7 +9,7 @@
 </head>
 <body>
     <input type="button" onclick="firstAlert.alert()" value="Click me" />
-    <script src="../dist/alerts.min.js"></script>
+    <script src="../dist/alerts.js"></script>
     <script>
         var firstAlert = new Alert({
             theme: {
@@ -19,11 +19,12 @@
             title: 'Approved',
             message: 'Finally',
             timeout: 5,
-            // icon: 'success',
-            // action: {
-            //     type: 'link',
-            //     redirect: 'https://google.com'
-            // },
+            icon: 'success',
+            action: {
+                text: 'Get me to google',
+                type: 'link',
+                redirect: 'https://google.com'
+            },
             button: {
                 type: 'submit',
                 text: 'Hehehe!',
@@ -32,15 +33,15 @@
                     redirect: 'https://google.com'
                 }
             },
-            customHTML: {
-                content: `
-                    <form action="/" method="POST">
-                        <input type="text" placeholder="Your name" style="color:red;" />
-                        <input type="submit" value="Subscribe me!" />
-                    </form>
-                `
-            },
-            closeButtonText: 'Close',
+            // customHTML: {
+            //     content: `
+            //         <form action="/" method="POST">
+            //             <input type="text" placeholder="Your name" style="color:red;" />
+            //             <input type="submit" value="Subscribe me!" />
+            //         </form>
+            //     `
+            // },
+            closeButtonText: 'Close Me please',
         });
     </script>
 </body>

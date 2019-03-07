@@ -41,10 +41,6 @@ class Alert implements AlertOptions {
 
     // Alert Function
     alert() {
-
-        if(this.object.theme){
-            console.log(`Entered the theme ${this.object.theme.name}`);
-        }
         if(this.object.theme.name == 'default' || !this.object.theme.name){
             // Loading the CSS file for theme
             const bodyHeadElem  = document.getElementsByTagName('head')[0];
@@ -185,8 +181,3 @@ class Alert implements AlertOptions {
 const travisCITest: any = () => {
     return true;
 }
-
-module.exports = {
-    Alert: Alert,
-    travisCITest: travisCITest
-};
