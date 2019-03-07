@@ -14,6 +14,37 @@
   opacity: 0;
 }
 
+.AlertsJS__button {
+  background: #428bca;
+  border: #357ebd solid 0px;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 15px;
+  text-decoration: none;
+  text-align: center;
+  min-width: 60px;
+  position: relative;
+  transition: color .1s ease;
+}
+.AlertsJS__button:hover{
+  background: #357ebd;
+}
+
+.AlertsJS__closeIcon {
+  color: #aaaaaa;
+  font-size: 20px;
+  text-decoration: none;
+  padding:10px;
+  position: absolute;
+  right: 7px;
+  top: 0;
+}
+.AlertsJS__closeIcon:hover {
+  color: #919191;
+}
+
 .AlertsJS__overlay {
   content: '\A';
   position: fixed;
@@ -30,7 +61,7 @@
 .AlertsJS__alert {
   background-color: white;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.16);
-  max-height: 50vh;
+  max-height: 100vh;
   width: 30vw;
   position: absolute;
   border-radius: 20px;
@@ -51,4 +82,26 @@
 
 .AlertsJS__alert img {
   max-height: 10vh;
+}
+
+.AlertsJS__link {
+  text-decoration: none;
+  color: #428bca;
+  padding-bottom: 10px;
+}
+
+.AlertsJS__customHTML {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.AlertsJS__input {
+  width:200px;
+  padding:8px;
+  border:1px solid #ddd;
+  color:#888;
+  outline:0;
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom: 10px;
 }

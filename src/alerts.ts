@@ -30,6 +30,7 @@ interface AlertOptions {
             content : string;
         }
         closeButtonText ? : string;
+        closeIcon ?: boolean;
     }
 }
 
@@ -142,6 +143,7 @@ class Alert implements AlertOptions {
                   const buttonElem = document.createElement('a');
                   buttonElem.href = this.object.action.redirect;
                   buttonElem.textContent = this.object.action.text || 'Ok!';
+                  buttonElem.classList.add('AlertsJS__link');
                   buttonElem.addEventListener('click', close);
                   alertElem.appendChild(buttonElem);
                 }
@@ -163,15 +165,27 @@ class Alert implements AlertOptions {
                 const buttonElemLink = document.createElement('a');
                 buttonElemLink.href = this.object.button.action.redirect;
                 buttonElemLink.textContent = this.object.button.text;
+                buttonElemLink.classList.add("AlertsJS__button")
                 alertElem.appendChild(buttonElemLink);
               } else{
                 const buttonElem = document.createElement('button');
                 buttonElem.textContent = this.object.button.text;
                 buttonElem.type = this.object.button.type || null;
+                buttonElem.classList.add("AlertsJS__button");
                 alertElem.appendChild(buttonElem);
               }
 
           }
+
+        //   Close Icon Configuration
+        if(this.object.closeIcon){
+            const closeIconElem = document.createElement('a');
+            closeIconElem.textContent = '×';
+            closeIconElem.href = '#';
+            closeIconElem.classList.add('AlertsJS__closeIcon');
+            closeIconElem.addEventListener('click', close);
+            alertElem.appendChild(closeIconElem);    
+        }
         //   Appending to body element
           document.body.appendChild(overlayElem);
           overlayElem.appendChild(alertElem);

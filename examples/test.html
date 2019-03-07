@@ -8,7 +8,8 @@
     <title>AlertsJS Example</title>
 </head>
 <body>
-    <input type="button" onclick="firstAlert.alert()" value="Click me" />
+    <h1>AlertsJS Example Modal 😆</h1>
+    <input type="button" onclick="firstAlert.alert()" value="Click me"/>
     <script src="../dist/alerts.js"></script>
     <script>
         var firstAlert = new Alert({
@@ -26,22 +27,22 @@
                 redirect: 'https://google.com'
             },
             button: {
-                type: 'submit',
+                type: 'close',
                 text: 'Hehehe!',
                 action: {
                     type: 'link',
                     redirect: 'https://google.com'
                 }
             },
-            // customHTML: {
-            //     content: `
-            //         <form action="/" method="POST">
-            //             <input type="text" placeholder="Your name" style="color:red;" />
-            //             <input type="submit" value="Subscribe me!" />
-            //         </form>
-            //     `
-            // },
-            closeButtonText: 'Close Me please',
+            customHTML: {
+                content: `
+                    <form action="/" method="POST">
+                        <input type="text" placeholder="Your name" class="AlertsJS__input" />
+                        <input type="submit" value="Subscribe me!" class="AlertsJS__button" />
+                    </form>
+                `
+            },
+            closeIcon: true,
         });
     </script>
 </body>
