@@ -48,6 +48,10 @@ class Alert {
                 close();
             }
         }, false);
+        // Timeout function
+        if (this.object.timeout) {
+            setTimeout(close, this.object.timeout * 1000);
+        }
         // Checks whether an icon parameter is passed
         if (this.object.icon) {
             // Creating an icon element

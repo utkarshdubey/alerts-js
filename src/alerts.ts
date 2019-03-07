@@ -7,6 +7,7 @@ interface AlertOptions {
         title : string;
         message : string;
         icon ? : string;
+        timeout ? : number;
         effects ?:{
             fade ?: boolean;
         }
@@ -90,6 +91,11 @@ class Alert implements AlertOptions {
                 close();
             }
         }, false);
+
+        // Timeout function
+        if(this.object.timeout){
+            setTimeout(close, this.object.timeout * 1000);
+        }
 
         // Checks whether an icon parameter is passed
         if (this.object.icon) {
