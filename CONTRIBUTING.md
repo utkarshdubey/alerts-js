@@ -23,6 +23,7 @@ On the bottom there's usually one or two buttons which contain the actions you w
 Feel free to play around with colors, fonts etc. and create awesome designs.
 Please send us your design as an image file or as .psd .xd and so on.
 We're looking forward to see awesome designs from you :smile:!
+
 ### Commits
 - Consider starting the commit message with an applicable emoji:
   - 🎨 ``:art:`` when improving the format/structure of the code

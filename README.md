@@ -13,7 +13,7 @@ You can integrate it in your website with using just a single `<script>
 ## 💡 Why AlertsJS?
 Because it provides a simple, unobtrusive web interface to display beautiful alerts and popups with just one `
   `<script>`
-  ` tag, without having any prior knowledge of javascript. You can also - 
+  ` tag, without having any prior knowledge of javascript. You can also -
 - Create forms and collect data by integrating various plugins and or services such as MailChimp 📬 or our own service.
 - You can choose any of your favorite libraries such as micromodal.js or Sweetalerts.js right through the configurations and have a variety of over 200+ such libraries and plugins including our **custom made** one's.
 - We are tiny, which means no need to load Jquery and all the inessential things. You'll only include what you need.
@@ -27,7 +27,7 @@ We'd love if you help us by fixing a bug, or creating a whole new modal theme fr
 ## 👥 Use Cases
 AlertsJS can be used by anyone and everyone as its flexible and adjusts according to the situation. If you aren't interested in writing Javascript code, you can use our Web Interface with which you could configure all the settings which you could do while writing JS. But if you want to have even more control and write JS. Don't worry we have the open-source library with which you could build your own alerts/popups and customize it according to your needs.
 ## 🚛 The Open-Source Process
-Since the development is open-source, we want to add as many contributors as possible, We also are in need of moderators for curating the list weekly. The process would be simple:- 
+Since the development is open-source, we want to add as many contributors as possible, We also are in need of moderators for curating the list weekly. The process would be simple:-
 - 1️⃣ Moderators choose and approve various alert/popup libraries based on their stability and design.
 - 2️⃣ The then approved libraries would be added to the Global Package Index (GPI) with which it is accessible through the AlertsJS library.
 - 3️⃣ The curated list thus is updated weekly in the same manner. Note that only opensource libraries are added to the **GPI**.
@@ -76,18 +76,15 @@ You can call the alert with a 🛴 simple function:
 ```
 Or through an 👆 onclick event:
 
-```
-  html
-    <
-    input type = "button"
-  onclick = "alert.alert()"
-  value = "Click me" / >
-  
+```html
+    <input type = "button"
+      onclick = "alert.alert()"
+      value = "Click me" />
 ```
 
 ### Properties
 
-  
+
 |Property Name| Property Description  |
 |--|--|
 | title | The title of the modal. It is a required field. |
