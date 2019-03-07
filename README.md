@@ -71,8 +71,7 @@ You can use the following options 👂 in the constructor:
   });
 
   ...
-  ``
-  `
+
 You can call the alert with a 🛴 simple function:
 
 ```js
