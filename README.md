@@ -1,5 +1,11 @@
 # 🅰 Alerts JS
 
+[![Build](https://img.shields.io/travis/utkarshdubey/alerts-js.svg)](https://travis-ci.org/utkarshdubey/alerts-js)
+[![Coveralls](https://img.shields.io/coveralls/github/AnandChowdhary/fraud.svg)](https://coveralls.io/github/AnandChowdhary/fraud)
+[![GitHub](https://img.shields.io/github/license/utkarshdubey/alerts-js.svg)](https://github.com/utkarshdubey/alerts-js/blob/master/LICENSE)
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/utkarshdubey/alerts-js.svg)
+![Awesomeness Level](https://img.shields.io/badge/awesomeness-extreme-blue.svg)
+
 <p align="center">
   <img src="./assets/logo-large-red.png" alt="AlertsJS Logo">
 </p>
