@@ -146,4 +146,7 @@ class Alert {
 const travisCITest = () => {
     return true;
 };
+module.exports = {
+    travisCITest: travisCITest
+};
 //# sourceMappingURL=alerts.js.map

@@ -1,4 +1,4 @@
-interface AlertOptions {
+﻿interface AlertOptions {
     object: {
         theme ?: {
             name ? : string;
@@ -194,4 +194,8 @@ class Alert implements AlertOptions {
 
 const travisCITest: any = () => {
     return true;
+}
+
+module.exports = {
+	travisCITest: travisCITest
 }
