@@ -96,9 +96,13 @@ Or through an 👆 onclick event:
 
 ##  ✏ To-Do
 - [x] Make it work
-- [ ] Add CSS effects, such as fadeIn, etc. to the modal
-- [ ] Add more properties.
-  
+- [ ] Example Modal
+  - [x] Add CSS effects, such as fadeIn, etc. to the modal
+  - [ ] Create a nice, good looking button with good animations.
+  - [ ] Better and nice looking modal design.
+- [x] Add more properties.
+- [ ] MailChimp and work on other integrations.
+- [ ] Work on designer and developer documentation for creating custom themes.  
 
 
 ## ❓ FAQ
