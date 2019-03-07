@@ -80,6 +80,14 @@ class Alert {
         else {
             return console.log('No message is provided.');
         }
+        if (this.object.customHTML) {
+            if (!this.object.customHTML.content)
+                console.error('customHTML should have atleast one identifier or content property.');
+            const customElem = document.createElement('div');
+            customElem.innerHTML = this.object.customHTML.content;
+            customElem.classList.add('AlertsJS__customHTML');
+            alertElem.appendChild(customElem);
+        }
         // Checks whether an action is provided
         if (this.object.action) {
             switch (this.object.action.type) {

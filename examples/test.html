@@ -31,6 +31,14 @@
                     redirect: 'https://google.com'
                 }
             },
+            customHTML: {
+                content: `
+                    <form action="/" method="POST">
+                        <input type="text" placeholder="Your name" style="color:red;" />
+                        <input type="submit" value="Subscribe me!" />
+                    </form>
+                `
+            },
             closeButtonText: 'Close',
         });
     </script>

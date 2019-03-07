@@ -7,6 +7,9 @@ interface AlertOptions {
         title : string;
         message : string;
         icon ? : string;
+        effects ?:{
+            fade ?: boolean;
+        }
 
         action ?: {
             type ? : string;
@@ -21,6 +24,9 @@ interface AlertOptions {
                 type  : string;
                 redirect  : string;
             };
+        }
+        customHTML ?: {
+            content : string;
         }
         closeButtonText ? : string;
     }
@@ -70,12 +76,12 @@ class Alert implements AlertOptions {
 
         // Close Modal Function
         const close: any = () => {
-          overlayElem.classList.add('AlertsJS__fadeOut');
-          setTimeout(() => {
-            if(overlayElem.parentNode){
-              overlayElem.parentNode.removeChild(overlayElem);
-            }
-          }, 700);
+            overlayElem.classList.add('AlertsJS__fadeOut');
+            setTimeout(() => {
+              if(overlayElem.parentNode){
+                overlayElem.parentNode.removeChild(overlayElem);
+              }
+            }, 700);
         }
 
         // Listens for ESC to close the modal
@@ -117,6 +123,13 @@ class Alert implements AlertOptions {
             alertElem.appendChild(messageElem);
         } else{
             return console.log('No message is provided.');
+        }
+        if(this.object.customHTML){
+            if(!this.object.customHTML.content) console.error('customHTML should have atleast one identifier or content property.');
+            const customElem: any = document.createElement('div');
+            customElem.innerHTML = this.object.customHTML.content;
+            customElem.classList.add('AlertsJS__customHTML');
+            alertElem.appendChild(customElem);
         }
 
         // Checks whether an action is provided
