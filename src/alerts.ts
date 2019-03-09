@@ -72,6 +72,11 @@ class Alert implements AlertOptions {
         const alertElem: any = document.createElement('div');
         alertElem.classList.add('AlertsJS__alert');
 
+        // Create an effects div
+        const effectsElem: any = document.createElement('div');
+        effectsElem.classList.add('AlertsJS__effects');
+        alertElem.appendChild(effectsElem);
+
         // Close Modal Function
         const close: any = () => {
             overlayElem.classList.add('AlertsJS__fadeOut');
@@ -81,6 +86,7 @@ class Alert implements AlertOptions {
               }
             }, 700);
         }
+
 
         // Listens for ESC to close the modal
         window.addEventListener("keydown", (e) => {

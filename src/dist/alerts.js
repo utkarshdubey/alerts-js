@@ -30,6 +30,10 @@ class Alert {
         // Creating an alert element
         const alertElem = document.createElement('div');
         alertElem.classList.add('AlertsJS__alert');
+        // Create an effects div
+        const effectsElem = document.createElement('div');
+        effectsElem.classList.add('AlertsJS__effects');
+        alertElem.appendChild(effectsElem);
         // Close Modal Function
         const close = () => {
             overlayElem.classList.add('AlertsJS__fadeOut');
