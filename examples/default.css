@@ -1,22 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
 
 @keyframes fadeIn {
-  0% {opacity: 0}
-  100% {opacity: 1}
+  0% {opacity: 0; transform:scale(0.1)}
+  75% {transform:scale(1.1)}
+  100% {opacity: 1; transform:scale(1)}
 }
 
 @keyframes fadeOut {
-  0% {opacity: 1}
-  100% {opacity: 0}
+  0% {opacity: 1;}
+  100% {opacity: 0;}
 }
 
-@keyframes bubbleUp {
-  0% {bottom:272px;-webkit-transform:scale(.9);opacity:0}
-  1% {-webkit-transform:scale(.3);opacity:0}
-  30% {-webkit-transform:scale(.8);opacity:1}
-  95% {-webkit-transform:scale(.3);opacity:1}
-  99% {bottom:500px;-webkit-transform:scale(3);opacity:0}
-  100% {bottom:272px;-webkit-transform:scale(.9);opacity:0}
+@keyframes approved {
+  0% {transform:scale(1);opacity:1;}
+  12.5% {height:2px;width:167px;}
+  12.6% {top:41%;opacity:1;}
+  25% {height:41px;opacity:0.1;}
+  37.5% {top:30%;height:2px;}
+  37.6% {width:167px;;opacity:1}
+  50% {width:2px;transform:scaleX(1);}
+  62.5% {height:2px;width:167px;}
+  62.6% {opacity:1;}
+  75% {top:30%;height:41px;opacity:0.1;}
+  87.5% {top:41%;height:2px;}
+  87.6% {width:167px;opacity:1}
+  100% {transform:scale(1);width:2px;}
 }
 
 .AlertsJS__fadeOut {
@@ -89,29 +97,25 @@
 }
 
 
-.AlertsJS__alert:hover {
-  background-color: black;
-  color: white;  
+.AlertsJS__effects {
+  position: absolute;
+  top: 41%;
+  left: 33%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  background: black;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  border-radius: 100px;
+  border-width: 0.01em;
+  border: solid rgba(0, 0, 0, 0.1);
+  animation: approved 8s 1;  
 }
 
-.AlertsJS__effects {
-  background:#fff;
-  width:80px;
-  height:80px;
-  position:absolute;
-  display:block;
-  right:207px;
-  bottom:272px;
-  border-radius:100px; 
-  background:-moz-radial-gradient(center 45deg, circle closest-corner, rgba(75,190,200,0), rgba(75,190,200,.1), rgba(75,190,200,.3), rgba(255,255,255,.7));
-  background:-webkit-gradient(radial, center center, 0, center center, 100, from(rgba(75,190,200,.2)), to(rgba(255,255,255,.7)));
-  background:gradient(center 45deg, circle closest-corner, rgba(75,190,200,0), rgba(75,190,200,.1), rgba(75,190,200,.3), rgba(255,255,255,.7));
-  background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,0) 0%, rgba(9,133,167,0.1) 51%, rgba(9,133,167,0.3) 71%, rgba(9,133,167,.7) 100%);
-  animation:bubbleUp 2s infinite ease-in-out;
-  -webkit-animation:bubbleUp 2s infinite ease-in-out;
-  -o-animation:bubbleUp 2s infinite ease-in-out;
-  -moz-animation:bubbleUp 2s infinite ease-in-out;
-}
 
 .AlertsJS__alert {
   font-size: 1rem;
