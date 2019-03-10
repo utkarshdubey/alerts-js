@@ -11,21 +11,6 @@
   100% {opacity: 0;}
 }
 
-@keyframes approved {
-  0% {transform:scale(1);opacity:1;}
-  12.5% {height:2px;width:167px;}
-  12.6% {top:41%;opacity:1;}
-  25% {height:41px;opacity:0.1;}
-  37.5% {top:30%;height:2px;}
-  37.6% {width:167px;;opacity:1}
-  50% {width:2px;transform:scaleX(1);}
-  62.5% {height:2px;width:167px;}
-  62.6% {opacity:1;}
-  75% {top:30%;height:41px;opacity:0.1;}
-  87.5% {top:41%;height:2px;}
-  87.6% {width:167px;opacity:1}
-  100% {transform:scale(1);width:2px;}
-}
 
 .AlertsJS__fadeOut {
   opacity: 0;
@@ -94,26 +79,6 @@
   transition: background-color 1000ms;
   transition-timing-function: cubic-bezier(0.5, 2, 0.5, 2);
 
-}
-
-
-.AlertsJS__effects {
-  position: absolute;
-  top: 41%;
-  left: 33%;
-  display:flex;
-  flex-direction: column;
-  justify-content: space-around;
-  box-sizing: border-box;
-  background-clip: padding-box;
-  background: black;
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  border-radius: 100px;
-  border-width: 0.01em;
-  border: solid rgba(0, 0, 0, 0.1);
-  animation: approved 8s 1;  
 }
 
 
