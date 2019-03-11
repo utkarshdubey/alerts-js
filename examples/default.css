@@ -6,11 +6,10 @@
   100% {opacity: 1; transform:scale(1)}
 }
 
-@keyframes fadeOut {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
+@keyframes random {
+  0% {width: 0%}
+  100% {width: 94%}
 }
-
 
 .AlertsJS__fadeOut {
   opacity: 0;
@@ -76,11 +75,21 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  transition: background-color 1000ms;
-  transition-timing-function: cubic-bezier(0.5, 2, 0.5, 2);
-
+  
 }
 
+.AlertsJS__effects {
+  background-color: black;
+  position: absolute;
+  top: 0%;
+  left: 3%;
+  margin: 0;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 2px;
+  width: 4px;
+  height: 4px;
+  animation: random 5.8s infinite;
+}
 
 .AlertsJS__alert {
   font-size: 1rem;
