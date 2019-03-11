@@ -146,3 +146,9 @@
   font-weight:bold;
   margin-bottom: 10px;
 }
+
+@media only screen and (max-width: 650px) {
+  .AlertsJS__alert {
+    width: 50vw
+  }
+}
