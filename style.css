@@ -1,0 +1,40 @@
+.primary {
+  background-color: #EF3C3C;
+  color: white;
+}
+
+.caption {
+  color: #EF3C3C;
+}
+
+.card {
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.16);
+  width: 30vw;
+}
+
+.card .card-content {
+  width: 66%;
+}
+
+.card .card-image {
+  width: 30%;
+}
+
+.card .card-image img {
+  width: 100%;
+}
+.button {
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.16);
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  width: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
