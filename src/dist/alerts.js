@@ -48,7 +48,7 @@ class Alert {
                 if (overlayElem.parentNode) {
                     overlayElem.parentNode.removeChild(overlayElem);
                 }
-            }, 700);
+            }, 500);
         };
         // Listens for ESC to close the modal
         window.addEventListener("keydown", (e) => {
