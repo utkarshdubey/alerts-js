@@ -56,9 +56,9 @@ class Alert {
                 close();
             }
         }, false);
-        // Listens for click on outside the modal only if timeout is not there
+       // Listens for click on outside the modal only if timeout is not there
         if (!this.object.timeout) {
-            backElem.addEventListener("click", close());
+            backElem.addEventListener("click", close);
         }
         // Timeout function
         if (this.object.timeout) {
@@ -156,6 +156,7 @@ class Alert {
         //   Appending to body element
         document.body.appendChild(overlayElem);
         overlayElem.appendChild(alertElem);
+
     }
 }
 const travisCITest = () => {
