@@ -37,5 +37,8 @@
     "babel-plugin-uglify": "^1.0.2",
     "babel-polyfill": "^6.26.0",
     "jest": "^24.3.0"
+  },
+  "dependencies": {
+    "@types/node": "^11.11.3"
   }
 }

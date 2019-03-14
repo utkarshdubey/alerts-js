@@ -30,10 +30,17 @@ class Alert {
         // Creating an alert element
         const alertElem = document.createElement('div');
         alertElem.classList.add('AlertsJS__alert');
+        // Creating a background element
+        const backElem = document.createElement('div');
+        backElem.classList.add('AlertsJS__background');
+        overlayElem.appendChild(backElem);
         // Create an effects div
-        const effectsElem = document.createElement('div');
-        effectsElem.classList.add('AlertsJS__effects');
-        alertElem.appendChild(effectsElem);
+        if (this.object.timeout) {
+            const effectsElem = document.createElement('div');
+            effectsElem.classList.add('AlertsJS__effects');
+            alertElem.appendChild(effectsElem);
+            effectsElem.style.animation = "random " + this.object.timeout + "s 1 linear both";
+        }
         // Close Modal Function
         const close = () => {
             overlayElem.classList.add('AlertsJS__fadeOut');
@@ -49,6 +56,10 @@ class Alert {
                 close();
             }
         }, false);
+        // Listens for click on outside the modal only if timeout is not there
+        if (!this.object.timeout) {
+            backElem.addEventListener("click", close());
+        }
         // Timeout function
         if (this.object.timeout) {
             setTimeout(close, this.object.timeout * 1000);

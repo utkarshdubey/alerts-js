@@ -72,10 +72,18 @@ class Alert implements AlertOptions {
         const alertElem: any = document.createElement('div');
         alertElem.classList.add('AlertsJS__alert');
 
+        // Creating a background element
+        const backElem: any = document.createElement('div');
+        backElem.classList.add('AlertsJS__background');
+        overlayElem.appendChild(backElem);
+
         // Create an effects div
+        if(this.object.timeout){
         const effectsElem: any = document.createElement('div');
         effectsElem.classList.add('AlertsJS__effects');
         alertElem.appendChild(effectsElem);
+        effectsElem.style.animation = "random " + this.object.timeout + "s 1 linear both";
+        }
 
         // Close Modal Function
         const close: any = () => {
@@ -94,7 +102,10 @@ class Alert implements AlertOptions {
                 close();
             }
         }, false);
-
+        // Listens for click on outside the modal only if timeout is not there
+        if(!this.object.timeout){
+            backElem.addEventListener("click", close());
+        }
         // Timeout function
         if(this.object.timeout){
             setTimeout(close, this.object.timeout * 1000);
