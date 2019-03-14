@@ -8,7 +8,6 @@ yarn-error.log*
 # Free files
 greeter.ts
 greeter.js
-index.html
 
 # Runtime data
 pids
