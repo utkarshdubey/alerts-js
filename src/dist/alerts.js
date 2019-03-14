@@ -41,14 +41,31 @@ class Alert {
             alertElem.appendChild(effectsElem);
             effectsElem.style.animation = "random " + this.object.timeout + "s 1 linear both";
         }
+        var thisanim = "fade";
+        //Addition of Effects 
+        if (this.object.effects) {
+            switch (this.object.effects) {
+                case 'fade':
+                    thisanim = "fade";
+                    alertElem.style.animation = thisanim + "In .7s ease-in-out 0s 1 normal both";
+                    break;
+                case 'fade-scale':
+                    thisanim = "fadeScale";
+                    overlayElem.style.animation = thisanim + "In .7s ease-in-out 0s 1 normal both";
+                    break;
+            }
+        }
+        else if (!this.object.effects) {
+            thisanim = "fade";
+        }
         // Close Modal Function
         const close = () => {
-            overlayElem.classList.add('AlertsJS__fadeOut');
+            overlayElem.style.animation = "fadeScaleOut .7s ease-in-out 0s 1 normal both";
             setTimeout(() => {
                 if (overlayElem.parentNode) {
                     overlayElem.parentNode.removeChild(overlayElem);
                 }
-            }, 500);
+            }, 10000);
         };
         // Listens for ESC to close the modal
         window.addEventListener("keydown", (e) => {
@@ -56,7 +73,7 @@ class Alert {
                 close();
             }
         }, false);
-       // Listens for click on outside the modal only if timeout is not there
+        // Listens for click on outside the modal only if timeout is not there
         if (!this.object.timeout) {
             backElem.addEventListener("click", close);
         }
@@ -156,7 +173,6 @@ class Alert {
         //   Appending to body element
         document.body.appendChild(overlayElem);
         overlayElem.appendChild(alertElem);
-
     }
 }
 const travisCITest = () => {

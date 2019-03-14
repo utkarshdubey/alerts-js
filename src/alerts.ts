@@ -8,9 +8,7 @@
         message : string;
         icon ? : string;
         timeout ? : number;
-        effects ?:{
-            fade ?: boolean;
-        }
+        effects ?: string;
 
         action ?: {
             type ? : string;
@@ -85,14 +83,30 @@ class Alert implements AlertOptions {
         effectsElem.style.animation = "random " + this.object.timeout + "s 1 linear both";
         }
 
+        var thisanim: string = "fade";
+        //Addition of Effects 
+        if(this.object.effects) {
+            switch (this.object.effects) {
+            case 'fade':
+                thisanim = "fade";
+                alertElem.style.animation = thisanim + "In .7s ease-in-out 0s 1 normal both";
+                break;
+            case 'fade-scale':
+                thisanim = "fadeScale";
+                overlayElem.style.animation = thisanim + "In .7s ease-in-out 0s 1 normal both";
+                break;
+        }
+        }else if(!this.object.effects){
+            thisanim = "fade";
+        }
         // Close Modal Function
         const close: any = () => {
-            overlayElem.classList.add('AlertsJS__fadeOut');
+            overlayElem.style.animation = "fadeScaleOut .7s ease-in-out 0s 1 normal both";
             setTimeout(() => {
               if(overlayElem.parentNode){
                 overlayElem.parentNode.removeChild(overlayElem);
               }
-            }, 700);
+            }, 10000);
         }
 
 
@@ -104,7 +118,7 @@ class Alert implements AlertOptions {
         }, false);
         // Listens for click on outside the modal only if timeout is not there
         if(!this.object.timeout){
-            backElem.addEventListener("click", close());
+            backElem.addEventListener("click", close);
         }
         // Timeout function
         if(this.object.timeout){
@@ -151,7 +165,6 @@ class Alert implements AlertOptions {
             customElem.classList.add('AlertsJS__customHTML');
             alertElem.appendChild(customElem);
         }
-
         // Checks whether an action is provided
         if (this.object.action) {
             switch (this.object.action.type) {
