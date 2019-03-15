@@ -51,7 +51,7 @@ class Alert {
                     break;
                 case 'fade-scale':
                     thisanim = "fadeScale";
-                    overlayElem.style.animation = thisanim + "In .7s ease-in-out 0s 1 normal both";
+                    alertElem.style.animation = thisanim + "In .7s ease-in-out 0s 1 normal both";
                     break;
             }
         }
@@ -60,12 +60,13 @@ class Alert {
         }
         // Close Modal Function
         const close = () => {
-            overlayElem.style.animation = "fadeScaleOut .7s ease-in-out 0s 1 normal both";
+            alertElem.style.animation = thisanim + "Out .7s ease-in-out 0s 1 normal both";
+            // alertElem.classList.add('AlertsJS__' + thisanim + 'Out');
             setTimeout(() => {
                 if (overlayElem.parentNode) {
                     overlayElem.parentNode.removeChild(overlayElem);
                 }
-            }, 10000);
+            }, 500);
         };
         // Listens for ESC to close the modal
         window.addEventListener("keydown", (e) => {

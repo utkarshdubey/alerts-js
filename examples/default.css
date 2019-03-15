@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
 
-@keyframes fadeIn {
+@keyframes fadeScaleIn {
   0% {opacity: 0; transform: scale(0.1) translateY(-50%)}
   70% {transform:scale(1.1) translateY(-50%)}
   100% {opacity: 1; transform:scale(1) translateY(-50%)}
+}
+@keyframes fadeScaleOut {
+  0% {opacity: 1; transform: scale(1) translateY(-50%)}
+  70% {transform:scale(0.5) translateY(-50%)}
+  100% {opacity: 0; transform:scale(0.1) translateY(-50%)}
+}
+@keyframes fadeIn {
+  0%{opacity: 0}
+  100%{opacity: 1}
 }
 @keyframes fadeOut {
   0%{opacity: 1}
@@ -16,6 +25,12 @@
 
 .AlertsJS__fadeOut {
   animation: fadeOut 700ms 1;
+  animation-fill-mode: both;
+}
+
+.AlertsJS__fadeScaleOut {
+  animation: fadeScaleOut 700ms 1;
+  animation-fill-mode: both;
 }
 
 .AlertsJS__button {
@@ -80,7 +95,7 @@
   border-radius: 20px;
   top: 50%;
   left: calc((100vw - 30vw) / 2);
-  transform: translateY(-50%) scale(1);
+
   padding: 1rem;
   font-family: 'Montserrat';
   display: flex;
@@ -88,8 +103,7 @@
   justify-content: space-around;
   align-items: center;
   z-index: 4;
-  animation: fadeIn .7s 1;
-  animation-fill-mode: both; 
+  animation-fill-mode: both;
 }
 
 .AlertsJS__effects {
