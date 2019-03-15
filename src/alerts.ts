@@ -8,7 +8,10 @@
         message : string;
         icon ? : string;
         timeout ? : number;
-        effects ?: string;
+        effects ?: {
+            type ? : string;
+            speed ? : string;
+        };
 
         action ?: {
             type ? : string;
@@ -84,30 +87,47 @@ class Alert implements AlertOptions {
         }
 
         var thisanim: string = "fade";
+        var thisspeed: number = 0;
         //Addition of Effects 
         if(this.object.effects) {
-            switch (this.object.effects) {
-            case 'fade':
-                thisanim = "fade";
-                alertElem.style.animation = thisanim + "In .7s ease-in-out 0s 1 normal both";
-                break;
-            case 'fade-scale':
-                thisanim = "fadeScale";
-                alertElem.style.animation = thisanim + "In .7s ease-in-out 0s 1 normal both";
-                break;
-        }
+            if(this.object.effects.speed){
+                        switch (this.object.effects.speed){
+                            case 'slow':
+                            alertElem.classList.add('--slow');
+                            thisspeed = 1500;
+                            this
+                            break;
+                            case 'fast':
+                            alertElem.classList.add('--fast');
+                            thisspeed = 300;
+                            break;
+                        }
+                    }else if(!this.object.effects.speed){
+                        alertElem.classList.add('--normal');
+                        thisspeed = 700;
+                    }
+                switch (this.object.effects.type) {
+                case 'fade':
+                    thisanim = "fade";
+                    alertElem.classList.add('AlertsJS__' + thisanim + 'In');
+                    break;
+                case 'fade-scale':
+                    thisanim = "fadeScale";
+                    alertElem.classList.add('AlertsJS__' + thisanim + 'In');
+                    break;
+            }
         }else if(!this.object.effects){
             thisanim = "fade";
         }
         // Close Modal Function
         const close: any = () => {
-            alertElem.style.animation = thisanim + "Out .7s ease-in-out 0s 1 normal both";
-            // alertElem.classList.add('AlertsJS__' + thisanim + 'Out');
+            // alertElem.style.animation = thisanim + "Out .7s ease-in-out 0s 1 normal both";
+            alertElem.classList.add('AlertsJS__' + thisanim + 'Out');
             setTimeout(() => {
               if(overlayElem.parentNode){
                 overlayElem.parentNode.removeChild(overlayElem);
               }
-            }, 500);
+            }, thisspeed);
         }
 
 

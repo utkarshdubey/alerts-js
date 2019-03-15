@@ -7,7 +7,6 @@
 }
 @keyframes fadeScaleOut {
   0% {opacity: 1; transform: scale(1) translateY(-50%)}
-  70% {transform:scale(0.5) translateY(-50%)}
   100% {opacity: 0; transform:scale(0.1) translateY(-50%)}
 }
 @keyframes fadeIn {
@@ -23,14 +22,32 @@
   100% {width: 94%}
 }
 
+.AlertsJS__alert.--slow{
+  animation-duration: 2s;
+}
+
+.AlertsJS__alert.--normal{
+  animation-duration: 1s;
+}
+
+.AlertsJS__alert.--fast{
+  animation-duration: 500ms;
+}
+
+.AlertsJS__fadeIn {
+  animation: fadeIn 1 both;
+}
+
 .AlertsJS__fadeOut {
-  animation: fadeOut 700ms 1;
-  animation-fill-mode: both;
+  animation: fadeOut 1 both;
+}
+
+.AlertsJS__fadeScaleIn {
+  animation: fadeScaleIn 1 both;
 }
 
 .AlertsJS__fadeScaleOut {
-  animation: fadeScaleOut 700ms 1;
-  animation-fill-mode: both;
+  animation: fadeScaleOut 1 both;
 }
 
 .AlertsJS__button {
@@ -95,7 +112,7 @@
   border-radius: 20px;
   top: 50%;
   left: calc((100vw - 30vw) / 2);
-
+  transform:scale(1) translateY(-50%);
   padding: 1rem;
   font-family: 'Montserrat';
   display: flex;
@@ -155,3 +172,4 @@
     width: 50vw
   }
 }
+

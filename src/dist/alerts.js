@@ -42,16 +42,34 @@ class Alert {
             effectsElem.style.animation = "random " + this.object.timeout + "s 1 linear both";
         }
         var thisanim = "fade";
+        var thisspeed = 0;
         //Addition of Effects 
         if (this.object.effects) {
-            switch (this.object.effects) {
+            if (this.object.effects.speed) {
+                switch (this.object.effects.speed) {
+                    case 'slow':
+                        alertElem.classList.add('--slow');
+                        thisspeed = 1500;
+                        this;
+                        break;
+                    case 'fast':
+                        alertElem.classList.add('--fast');
+                        thisspeed = 300;
+                        break;
+                }
+            }
+            else if (!this.object.effects.speed) {
+                alertElem.classList.add('--normal');
+                thisspeed = 700;
+            }
+            switch (this.object.effects.type) {
                 case 'fade':
                     thisanim = "fade";
-                    alertElem.style.animation = thisanim + "In .7s ease-in-out 0s 1 normal both";
+                    alertElem.classList.add('AlertsJS__' + thisanim + 'In');
                     break;
                 case 'fade-scale':
                     thisanim = "fadeScale";
-                    alertElem.style.animation = thisanim + "In .7s ease-in-out 0s 1 normal both";
+                    alertElem.classList.add('AlertsJS__' + thisanim + 'In');
                     break;
             }
         }
@@ -60,13 +78,13 @@ class Alert {
         }
         // Close Modal Function
         const close = () => {
-            alertElem.style.animation = thisanim + "Out .7s ease-in-out 0s 1 normal both";
-            // alertElem.classList.add('AlertsJS__' + thisanim + 'Out');
+            // alertElem.style.animation = thisanim + "Out .7s ease-in-out 0s 1 normal both";
+            alertElem.classList.add('AlertsJS__' + thisanim + 'Out');
             setTimeout(() => {
                 if (overlayElem.parentNode) {
                     overlayElem.parentNode.removeChild(overlayElem);
                 }
-            }, 500);
+            }, thisspeed);
         };
         // Listens for ESC to close the modal
         window.addEventListener("keydown", (e) => {
