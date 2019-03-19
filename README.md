@@ -62,31 +62,31 @@ Since the development is open-source, we want to add as many contributors as pos
 You can use the following options 👂 in the constructor:
 ```js
   const alert = new Alert({
-    title: 'Awesome Alert', // The 📌 title of modal.
-    message: 'This is another awesome alert made using AlertsJS', // 🌭 Content to display.
-    icon: 'success', // A success ✅ or an ❎ error, custom icons are upcoming
-    timeout: 5, // ⌚ Set a timeout after the modal has been opened. Time in seconds.
+    title: 'Awesome Alert', // The title of modal.
+    message: 'This is another awesome alert made using AlertsJS', // Content to display.
+    icon: 'success', // A success or an error, custom icons are upcoming
+    timeout: 5, // Set a timeout after the modal has been opened. Time in seconds.
     action: {
-      type: 'link', // ⚡ The link you want to redirect to... more actions are coming
-      redirect: '/purchase/success', // 🌐 Link where you want to redirect
+      type: 'link', // The link you want to redirect to... more actions are coming
+      redirect: '/purchase/success', // Link where you want to redirect
     },
-    button: { // 🔳 Button configurations
-      type: 'submit', // 🌀 Type of the button [submit, reset]
-      text: 'Get me flyin!', // 💊 Button text
-      action: { // ⚡ Actions on the button
-        type: 'link', // 👍 The link you want to redirect to... more actions are coming
-        redirect: 'https://google.com' // 🌐 Link where you want to redirect
+    button: { // Button configurations
+      type: 'submit', // Type of the button [submit, reset]
+      text: 'Get me flyin!', // Button text
+      action: { // Actions on the button
+        type: 'link', // The link you want to redirect to... more actions are coming
+        redirect: 'https://google.com' // Link where you want to redirect
       }
     },
-    customHTML: { // 🛃 Custom HTML Arrives
+    customHTML: { // Custom HTML Arrives
       content: `
           <form action="/" method="POST">
               <input type="text" placeholder="Your name" style="color:red;" />
               <input type="submit" value="Subscribe me!" />
           </form>
-          ` // 🎬 Wrap everything inside the `` backticks.         
+          ` // Wrap everything inside the `` backticks.         
     },
-    closeButtonText: 'Close this thingy', // 🔲 The close button text.
+    closeButtonText: 'Close this thingy', // The close button text.
   });
 
   ...
