@@ -89,7 +89,7 @@ You can use the following options 👂 in the constructor:
     closeButtonText: 'Close this thingy', // The close button text.
   });
 
-  ...
+```
 
 You can call the alert with a 🛴 simple function:
 
